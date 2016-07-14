@@ -81,3 +81,14 @@ node 'ip-172-31-27-9.eu-west-1.compute.internal' {
 node 'ip-172-31-17-106.eu-west-1.compute.internal' {
   include jenkins
 }
+
+node 'ip-172-31-30-120.eu-west-1.compute.internal' {
+  include linux::default
+  include mounts
+  include puppet_agent
+  include packages
+  include lvm::dmz::shared
+  include users::dmz::shared
+  include was::base
+  include node::test
+}
